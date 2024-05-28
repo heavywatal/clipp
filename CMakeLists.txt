@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 project(clipp
-  VERSION 1.2.3
+  VERSION 1.2.3.1
   LANGUAGES CXX)
 
 cmake_policy(SET CMP0076 NEW)
