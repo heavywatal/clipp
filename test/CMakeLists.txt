@@ -1,9 +1,9 @@
 if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Debug)
 endif()
-message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
+cmake_print_variables(CMAKE_BUILD_TYPE)
 
-message(STATUS "CMAKE_CXX_COMPILER_ID: ${CMAKE_CXX_COMPILER_ID}")
+cmake_print_variables(CMAKE_CXX_COMPILER_ID)
 if("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
   add_compile_options(-stdlib=libc++)
 else()

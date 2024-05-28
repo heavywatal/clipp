@@ -1,12 +1,14 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.15)
 project(clipp
   VERSION 1.2.3
   LANGUAGES CXX)
 
-include(GNUInstallDirs)
+cmake_policy(SET CMP0076 NEW)
 set(CMAKE_VERBOSE_MAKEFILE ON)
+include(CMakePrintHelpers)
+include(GNUInstallDirs)
+cmake_print_variables(CMAKE_INSTALL_PREFIX)
 
-message(STATUS "CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
 add_library(${PROJECT_NAME} INTERFACE)
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_11)
