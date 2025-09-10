@@ -1,7 +1,7 @@
 /*****************************************************************************
  *  ___  _    _   ___ ___
  * |  _|| |  | | | _ \ _ \   CLIPP - command line interfaces for modern C++
- * | |_ | |_ | | |  _/  _/   version 1.2.3.1
+ * | |_ | |_ | | |  _/  _/   version 1.2.3.2
  * |___||___||_| |_| |_|     https://github.com/heavywatal/clipp (fork)
  *
  * Licensed under the MIT License <http://opensource.org/licenses/MIT>.
