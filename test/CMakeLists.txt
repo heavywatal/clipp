@@ -1,4 +1,4 @@
-if (NOT CMAKE_BUILD_TYPE)
+if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Debug)
 endif()
 cmake_print_variables(CMAKE_BUILD_TYPE)
@@ -32,12 +32,9 @@ add_compile_options(-Wundef)
 
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} source_files)
 foreach(src IN LISTS source_files)
-  get_filename_component(name_we ${src} NAME_WE)
+  cmake_path(GET src STEM name_we)
   add_executable(test-${name_we} ${src})
-  target_link_libraries(test-${name_we} ${PROJECT_NAME}::${PROJECT_NAME})
-  set_target_properties(test-${name_we} PROPERTIES
-    CXX_STANDARD_REQUIRED ON
-    CXX_EXTENSIONS OFF
-  )
+  set_target_properties(test-${name_we} PROPERTIES CXX_EXTENSIONS OFF)
+  target_link_libraries(test-${name_we} PRIVATE ${PROJECT_NAME}::${PROJECT_NAME})
   add_test(NAME ${name_we} COMMAND $<TARGET_FILE:test-${name_we}>)
 endforeach()
