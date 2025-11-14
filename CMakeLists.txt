@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 project(clipp
-  VERSION 1.2.3.2
+  VERSION 1.2.3.3
   LANGUAGES CXX)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
